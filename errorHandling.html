@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="text" id="input">
+<button onclick="Check()">click</button>
+<h3 id="result"></h3>
+
+<body>
+
+    <script>
+
+        function Check() {
+            let value = input.value
+
+
+
+            try {
+                if (value == '') {
+                    throw 'value cant be blank!'
+                }
+                if (isNaN(value)) {
+                    throw 'VAlue is not a number!'
+                } if (value > 100) {
+                    throw 'value should be less then 100!'
+                }
+                if (value < 10) {
+                    throw 'value should be greater then 10!'
+                }
+
+
+                result.innerHTML = 'value is okay'
+                result.style.color = 'green'
+
+            } catch (e) {
+                result.innerHTML = e
+                result.style.color = 'red'
+            }
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
