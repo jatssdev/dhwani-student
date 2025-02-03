@@ -176,8 +176,8 @@ const earbuds = [
         discount: 47,
         qty: 1,
         category: "tshirt",
-      },
-      {
+    },
+    {
         id: 102,
         title: `Veirdo Polo T Shirts for Men, Cotton Polo Neck T Shirts for Men, Half Sleeves Men Polo Tshirt, Classic Polo T Shirts for Men, Men's Regular Polo Shirt`,
         img: "https://m.media-amazon.com/images/I/51lP3VinwoL._UY879_.jpg",
@@ -189,8 +189,8 @@ const earbuds = [
         discount: 68,
         qty: 1,
         category: "tshirt",
-      },
-      {
+    },
+    {
         id: 103,
         title: `AUSK Men's Henley Neck Full Sleeves Regular Fit Cotton T-Shirts`,
         img: "https://m.media-amazon.com/images/I/7152RCSU4LL._UX569_.jpg",
@@ -202,8 +202,8 @@ const earbuds = [
         discount: 76,
         qty: 1,
         category: "tshirt",
-      },
-      {
+    },
+    {
         id: 104,
         title: `Lyned Mens Cotton Half Sleeve Striped Polo T Shirt with Collar`,
         img: "https://m.media-amazon.com/images/I/71pNnnaOIzS._UY741_.jpg",
@@ -215,8 +215,8 @@ const earbuds = [
         discount: 73,
         qty: 1,
         category: "tshirt",
-      },
-      {
+    },
+    {
         id: 105,
         title: `AELOMART Men's T Shirt-(Amt250105-P_Green)`,
         img: "https://m.media-amazon.com/images/I/71O1QaI-sbL._UY741_.jpg",
@@ -228,8 +228,8 @@ const earbuds = [
         discount: 67,
         qty: 1,
         category: "tshirt",
-      },
-      {
+    },
+    {
         id: 106,
         title: `Campus Sutra Men's Blue and White Ombre Dri-Fit Activewear T-Shirt Regular Fit for Casual Wear | Structured T-Shirt Crafted with Comfort Fit and High-Performance for Everyday Wear`,
         img: "https://m.media-amazon.com/images/I/61MjKYTzgQS._UX679_.jpg",
@@ -241,8 +241,8 @@ const earbuds = [
         discount: 67,
         qty: 1,
         category: "tshirt",
-      },
-      {
+    },
+    {
         id: 107,
         title: `EYEBOGLER Men's Striped Regular Fit T-Shirt (T428HS_Blue XL) EYEBOGLERMenRegularT-Shirt`,
         img: "https://m.media-amazon.com/images/I/51zPkF2QEDL._SY741._SX._UX._SY._UY_.jpg",
@@ -254,8 +254,8 @@ const earbuds = [
         discount: 69,
         qty: 1,
         category: "tshirt",
-      },
-      {
+    },
+    {
         id: 108,
         title: `Urbano Fashion Men's Graphic Printed Round Neck Half Sleeve Slim Fit Cotton T-Shirt`,
         img: "https://m.media-amazon.com/images/I/812LCdKokXL._UX679_.jpg",
@@ -267,7 +267,7 @@ const earbuds = [
         discount: 63,
         qty: 1,
         category: "tshirt",
-      },
+    },
 ];
 
 
@@ -284,3 +284,7 @@ let renderProducts = () => {
     }).join('')
 }
 renderProducts()
+
+function cartToggle(){
+    cartElement.classList.toggle('active')
+}
