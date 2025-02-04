@@ -270,6 +270,8 @@ const earbuds = [
     },
 ];
 
+let cart = []
+
 
 let renderProducts = () => {
     wrapper.innerHTML = earbuds.map((x) => {
@@ -279,12 +281,47 @@ let renderProducts = () => {
 </div>
 <h2>${x.title}</h2>
 <h3>${x.price}rs</h3>
-<button>Add to Cart </button>
+<button onclick='addToCart(${x.id})'>Add to Cart </button>
 </div>`
     }).join('')
 }
 renderProducts()
 
-function cartToggle(){
+function cartToggle() {
     cartElement.classList.toggle('active')
+}
+
+let addToCart = (id) => {
+    let selectedProduct = earbuds.find((x) => x.id == id)
+    cart.push(selectedProduct)
+    cartElement.innerHTML = cart.map((x) => {
+        return `<div class="product" >
+<div class="img">
+    <img src="${x.img}" alt="">
+</div>
+<h2>${x.title}</h2>
+<h3>${x.price}rs</h3>
+<button onclick='remove(${x.id})'>remove</button>
+</div>`
+    }).join('')
+
+}
+let remove = (id) => {
+    let newCart = cart.filter((x) => x.id != id)
+
+    cart = newCart
+
+    cartElement.innerHTML = cart.map((x) => {
+        return `<div class="product" >
+<div class="img">
+    <img src="${x.img}" alt="">
+</div>
+<h2>${x.title}</h2>
+<h3>${x.price}rs</h3>
+<button onclick='remove(${x.id})'>remove</button>
+</div>`
+    }).join('')
+
+
+
 }
