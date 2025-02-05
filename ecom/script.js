@@ -292,18 +292,37 @@ function cartToggle() {
 }
 
 let addToCart = (id) => {
+    let existing = cart.find((x) => x.id == id)
     let selectedProduct = earbuds.find((x) => x.id == id)
-    cart.push(selectedProduct)
-    cartElement.innerHTML = cart.map((x) => {
-        return `<div class="product" >
+
+    if (existing) {
+        alert('this item is already in a cart!')
+    }
+    else {
+        cart.push(selectedProduct)
+        cartElement.innerHTML = cart.map((x) => {
+            return `<div class="product" >
 <div class="img">
     <img src="${x.img}" alt="">
 </div>
 <h2>${x.title}</h2>
+<div>
+<div>
+        <button onclick='QtyIncrease(${x.id})'>+</button>
+        <span>${x.qty}</span>
+        <button onclick='QtyDecrease(${x.id})'>-</button>
+    </div>
 <h3>${x.price}rs</h3>
+</div>
+
 <button onclick='remove(${x.id})'>remove</button>
 </div>`
-    }).join('')
+        }).join('')
+
+        cartElement.classList.add('active')
+    }
+
+
 
 }
 let remove = (id) => {
@@ -317,11 +336,69 @@ let remove = (id) => {
     <img src="${x.img}" alt="">
 </div>
 <h2>${x.title}</h2>
+<div>
+<div>
+        <button>+</button>
+        <span>${x.qty}</span>
+        <button>-</button>
+    </div>
 <h3>${x.price}rs</h3>
+</div>
+<button onclick='remove(${x.id})'>remove</button>
+</div>`
+    }).join('')
+
+}
+let QtyIncrease = (id) => {
+    let product = cart.find((x) => x.id == id)
+    product.qty++
+    cartElement.innerHTML = cart.map((x) => {
+        return `<div class="product" >
+<div class="img">
+<img src="${x.img}" alt="">
+</div>
+<h2>${x.title}</h2>
+<div>
+<div>
+    <button onclick='QtyIncrease(${x.id})'>+</button>
+    <span>${x.qty}</span>
+    <button onclick='QtyDecrease(${x.id})'>-</button>
+</div>
+<h3>${x.price}rs</h3>
+</div>
+
 <button onclick='remove(${x.id})'>remove</button>
 </div>`
     }).join('')
 
 
+}
+let QtyDecrease = (id) => {
+    let product = cart.find((x) => x.id == id)
+    if (product.qty <= 1) {
+        alert('minimum quantity should be 1!')
+    }else{
+
+        product.qty--
+    }
+
+    cartElement.innerHTML = cart.map((x) => {
+        return `<div class="product" >
+<div class="img">
+<img src="${x.img}" alt="">
+</div>
+<h2>${x.title}</h2>
+<div>
+<div>
+    <button onclick='QtyIncrease(${x.id})'>+</button>
+    <span>${x.qty}</span>
+    <button onclick='QtyDecrease(${x.id})'>-</button>
+</div>
+<h3>${x.price}rs</h3>
+</div>
+
+<button onclick='remove(${x.id})'>remove</button>
+</div>`
+    }).join('')
 
 }
