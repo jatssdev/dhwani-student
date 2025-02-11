@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="changeH2Handler(event)">change H2</button>
+
+    <h2 id="heading2">Hello World</h2>
+
+
+
+    <script>
+
+        function changeH2Handler(test) {
+            heading2.innerHTML = 'changed value!'
+            test.target.innerHTML = 'get original value'
+        }
+
+    </script>
+</body>
+
+</html>

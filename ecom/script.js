@@ -272,7 +272,12 @@ const earbuds = [
 
 let cart = []
 
-
+let cartTotalPriceHandler = () => {
+    cartTotalPrice.innerHTML = cart.reduce((t, x) => {
+        return t += x.price * x.qty
+    }, 0)
+}
+cartTotalPriceHandler()
 let renderProducts = () => {
     wrapper.innerHTML = earbuds.map((x) => {
         return `<div class="product" >
@@ -300,7 +305,7 @@ let addToCart = (id) => {
     }
     else {
         cart.push(selectedProduct)
-        cartElement.innerHTML = cart.map((x) => {
+        cartBody.innerHTML = cart.map((x) => {
             return `<div class="product" >
 <div class="img">
     <img src="${x.img}" alt="">
@@ -322,7 +327,7 @@ let addToCart = (id) => {
         cartElement.classList.add('active')
     }
 
-
+    cartTotalPriceHandler()
 
 }
 let remove = (id) => {
@@ -330,7 +335,7 @@ let remove = (id) => {
 
     cart = newCart
 
-    cartElement.innerHTML = cart.map((x) => {
+    cartBody.innerHTML = cart.map((x) => {
         return `<div class="product" >
 <div class="img">
     <img src="${x.img}" alt="">
@@ -347,12 +352,13 @@ let remove = (id) => {
 <button onclick='remove(${x.id})'>remove</button>
 </div>`
     }).join('')
+    cartTotalPriceHandler()
 
 }
 let QtyIncrease = (id) => {
     let product = cart.find((x) => x.id == id)
     product.qty++
-    cartElement.innerHTML = cart.map((x) => {
+    cartBody.innerHTML = cart.map((x) => {
         return `<div class="product" >
 <div class="img">
 <img src="${x.img}" alt="">
@@ -370,6 +376,7 @@ let QtyIncrease = (id) => {
 <button onclick='remove(${x.id})'>remove</button>
 </div>`
     }).join('')
+    cartTotalPriceHandler()
 
 
 }
@@ -377,12 +384,12 @@ let QtyDecrease = (id) => {
     let product = cart.find((x) => x.id == id)
     if (product.qty <= 1) {
         alert('minimum quantity should be 1!')
-    }else{
+    } else {
 
         product.qty--
     }
 
-    cartElement.innerHTML = cart.map((x) => {
+    cartBody.innerHTML = cart.map((x) => {
         return `<div class="product" >
 <div class="img">
 <img src="${x.img}" alt="">
@@ -401,4 +408,5 @@ let QtyDecrease = (id) => {
 </div>`
     }).join('')
 
+    cartTotalPriceHandler()
 }
