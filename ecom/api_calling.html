@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    </div>
+
+
+
+    <script>
+
+        let api = 'https://rrr.jatssdev.com/api/dashboard/all'
+
+
+        let getOptions = async () => {
+            let result = await fetch(api)
+            let data = await result.json()
+
+            wrapper.innerHTML = data.data.map((x) => {
+                return `<img src="https://rrr.jatssdev.com/uploads/${x.icon}" alt="">
+<h2>${x.title}</h2>`
+            })
+
+        }
+        getOptions()
+
+    </script>
+</body>
+
+</html>
