@@ -3,3 +3,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 0 100px;
+}
