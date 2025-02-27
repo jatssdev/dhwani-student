@@ -14,6 +14,9 @@ function Navbar() {
                 <NavLink to='/service'>
                     Service
                 </NavLink>
+                <NavLink to='/state'>
+                    useState
+                </NavLink>
             </div>
         </div>
     )
