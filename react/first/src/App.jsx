@@ -9,6 +9,8 @@ import About from './About'
 import Service from './Service'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import UseState from './UseState'
+import UseRaf from './UseRaf'
+import UseEffect from './UseEffect'
 function App() {
   let [user, setUSer] = useState({
     name: 'jatin raval', skill: 'mern stack developer'
@@ -22,6 +24,8 @@ function App() {
           <Route path='/about' element={<About userName={user.name} age={22} />} />
           <Route path='/service' element={<Service />} />
           <Route path='/state' element={<UseState />} />
+          <Route path='/raf' element={<UseRaf />} />
+          <Route path='/effect' element={<UseEffect />} />
 
         </Routes>
       </BrowserRouter>

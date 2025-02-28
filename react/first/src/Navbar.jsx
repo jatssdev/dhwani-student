@@ -17,6 +17,12 @@ function Navbar() {
                 <NavLink to='/state'>
                     useState
                 </NavLink>
+                <NavLink to='/raf'>
+                    useRef
+                </NavLink>
+                 <NavLink to='/effect'>
+                    useEffect
+                </NavLink>
             </div>
         </div>
     )
