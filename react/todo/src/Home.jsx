@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="add-todo-container">
+      <div className="">
         <input
           type="text"
           placeholder="Add a new task..."
@@ -33,7 +33,7 @@ const Home = () => {
           onChange={handleInputChange}
           className="todo-input"
         />
-        <button onClick={handleAddTodo} className="add-todo-button">
+        <button onClick={handleAddTodo} className=" border bg-red-400 text-white h-12 w-20 rounded-md">
           Add
         </button>
       </div>
