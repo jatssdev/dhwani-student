@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        h1 {
+            width: 400px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="hii">
+        hlow world
+    </h1>
+
+    <h1 id="hell">Dhwani</h1>
+    <button>Click</button>
+
+    <script>
+        $(document).ready(function () {
+            // $('h1').html('Jatin Raval')
+
+            // $('.hii').html('Jatin Raval')
+
+            // $('#hell').html('Jatin Raval')
+
+            // $('h1').css('background-color', 'red')
+            // $('h1').css({ backgroundColor: 'blue', color: 'white' })
+
+
+            $('button').dblclick(() => {
+                $('h1').animate({
+                    left: '50px',
+                    width: '600px',
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
