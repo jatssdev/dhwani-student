@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Javascript Browser Object Model</h1>
+    <h3 id="clock"></h3>
+    <button onclick="cancelTimeOut()">Cancel</button>
+
+
+    <script>
+
+        let timeout = setTimeout(() => {
+            alert('hii')
+        }, 5 * 1000)
+
+        let interval = setInterval(() => {
+            let d = new Date()
+            clock.innerHTML = d.getHours() + ' : ' + d.getMinutes() + ' : ' + d.getSeconds()
+        }, 1000)
+        function cancelTimeOut() {
+            clearInterval(interval)
+            clearTimeout(timeout)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

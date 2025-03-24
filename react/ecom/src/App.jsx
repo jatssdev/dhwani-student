@@ -7,14 +7,13 @@ import axios from 'axios'
 const App = () => {
   let [products, setproducts] = useState([])
   let fetchProducts = async () => {
-    let response = await axios.post('https://dummyjson.com/products', { name:"jatin"})
+    let response = await axios.get('https://dummyjson.com/products')
     console.log(response.data.products);
     setproducts(response.data.products)
   }
   useEffect(() => {
     fetchProducts()
   }, [])
-
   return (
     <div>
       <div id="wrapper">
