@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { mainContext } from '../App';
 
 const Navbar = () => {
+  let { cartItems } = useContext(mainContext)
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
@@ -22,7 +24,7 @@ const Navbar = () => {
             to="/cart"
             className="hover:text-blue-500 transition-colors duration-200"
           >
-            Cart
+            Cart ({cartItems.reduce((t, x) => t += x.qty, 0)})
           </Link>
         </div>
 

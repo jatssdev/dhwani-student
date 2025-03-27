@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { categories, products } from "../Data";
 import { Link } from "react-router-dom";
+import { mainContext } from "../App";
 
 
 
 
 const Home = () => {
-  const [cart, setCart] = useState([]);
+  let { addToCart } = useContext(mainContext)
 
   const handleAddToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    addToCart(product.id)
     alert(`${product.title.slice(0, 20)}... added to cart!`);
   };
 
